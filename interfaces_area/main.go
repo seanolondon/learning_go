@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 type bot interface {
-	getGreeting() string
+	getGreeting() float64
 }
 
 type englishBot struct{}
@@ -21,11 +21,12 @@ func printGreeting(b bot) {
 	fmt.Println(b.getGreeting())
 }
 
-func (eb englishBot) getGreeting() string {
+func (eb englishBot) getGreeting() float64 {
 	// VER CUSTOM LOGIC FOR GENERATING AN ENGLISH GREETING
-	return "Hi There"
+
+	return (0.5 * 10 * 2)
 }
 
-func (sb spanishBot) getGreeting() string {
-	return "Hola"
+func (sb spanishBot) getGreeting() float64 {
+	return (10.5 * 10.5)
 }

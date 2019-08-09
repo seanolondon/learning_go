@@ -1,32 +1,43 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-type bot interface {
-	getGreeting() float64
+type area interface {
+	getArea() float64
 }
 
-type englishBot struct{}
-type spanishBot struct{}
+type triangle struct {
+	base   float64
+	height float64
+}
+type square struct {
+	side float64
+}
 
 func main() {
-	eb := englishBot{}
-	sb := spanishBot{}
+	t := triangle{
+		base:   12.6,
+		height: 25.7,
+	}
+	s := square{
+		side: 9.9,
+	}
 
-	printGreeting(eb)
-	printGreeting(sb)
+	printArea(t)
+	printArea(s)
 }
 
-func printGreeting(b bot) {
-	fmt.Println(b.getGreeting())
+func printArea(a area) {
+	fmt.Println(a.getArea())
 }
 
-func (eb englishBot) getGreeting() float64 {
+func (t triangle) getArea() float64 {
 	// VER CUSTOM LOGIC FOR GENERATING AN ENGLISH GREETING
-
-	return (0.5 * 10 * 2)
+	return (0.5 * t.base * t.height)
 }
 
-func (sb spanishBot) getGreeting() float64 {
-	return (10.5 * 10.5)
+func (s square) getArea() float64 {
+	return (s.side * s.side)
 }

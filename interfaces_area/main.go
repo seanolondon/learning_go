@@ -2,40 +2,30 @@ package main
 
 import "fmt"
 
-type shape interface {
-	printArea
+type bot interface {
+	getGreeting() string
 }
 
-type square struct {
-	sideLength float64
-}
-
-type triangle struct {
-	height float64
-	base   float64
-}
+type englishBot struct{}
+type spanishBot struct{}
 
 func main() {
-	triangle := shape{base: 5.5,
-		height: 8.2}
-	square := shape{sideLength: 10.1}
+	eb := englishBot{}
+	sb := spanishBot{}
 
-	jim.updateName("jimmy")
-	jim.print()
+	printGreeting(eb)
+	printGreeting(sb)
 }
 
-func printArea(s shape) {
-	fmt.Println(s.getArea())
+func printGreeting(b bot) {
+	fmt.Println(b.getGreeting())
 }
 
-// func (pointerToPerson *person) updateName(newFirstName string) {
-// 	(*pointerToPerson).firstName = newFirstName
-// }
-
-func (pointerToTriangle *triangle) getArea(area float64) {
-	(0.5 * pointerToTriangle.base * *pointerToTriangle.height) = area
+func (eb englishBot) getGreeting() string {
+	// VER CUSTOM LOGIC FOR GENERATING AN ENGLISH GREETING
+	return "Hi There"
 }
 
-func (pointerToSquare *square) getArea(area float64) {
-	(*pointerToSquare.sideLength * *pointerToSquare.sideLength) = area
+func (sb spanishBot) getGreeting() string {
+	return "Hola"
 }

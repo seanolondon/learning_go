@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-type area interface {
+type shape interface {
 	getArea() float64
 }
 
@@ -29,8 +29,8 @@ func main() {
 	printArea(s)
 }
 
-func printArea(a area) {
-	fmt.Println(a.getArea())
+func printArea(s shape) {
+	fmt.Println(s.getArea())
 }
 
 func (t triangle) getArea() float64 {

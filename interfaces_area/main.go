@@ -34,7 +34,10 @@ func printArea(a area) {
 }
 
 func (t triangle) getArea() float64 {
-	// VER CUSTOM LOGIC FOR GENERATING AN ENGLISH GREETING
+	//This is different than the chat bot!
+	//The chat bot only has something like englishBot
+	//because the eb. is not used. Here it is used, so you must
+	//put the t.
 	return (0.5 * t.base * t.height)
 }
 

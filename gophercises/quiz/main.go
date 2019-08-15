@@ -7,6 +7,10 @@ import (
 	"os"
 )
 
+type results struct {
+	input string
+}
+
 func main() {
 	//open the file
 	file, err := os.Open(os.Args[1])
@@ -23,9 +27,14 @@ func main() {
 	//for loop through each row
 
 	//change below to a function which adds 1 each reponse.
-
+	//
 	for probs := range reader {
-		fmt.Printf("Problem #%v: %v\n", probs+1, reader[probs][0])
+		fmt.Printf("Problem #%v: %v =\n", probs+1, reader[probs][0])
+
+		//use below for input but causes huge loop of 0s
+		//input := bufio.NewReader(os.Stdin)
+		//	fmt.Printf("%v\n", input)
+
 	}
 
 	//second column is the correct answer

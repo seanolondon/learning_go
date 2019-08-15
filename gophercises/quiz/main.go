@@ -20,9 +20,19 @@ func main() {
 		log.Fatal(err)
 	}
 
+	//for loop through each row
+
+	//change below to a function which adds 1 each reponse.
+
+	for probs := range reader {
+		fmt.Printf("Problem #%v: %v\n", probs+1, reader[probs][0])
+	}
+
+	//second column is the correct answer
+
 	// fmt.Printf("Check: %s\n", string(csvread))
 	//print the first line
-	fmt.Println(reader[0])
+	//fmt.Println(reader[0])
 
 	//io.Copy(os.Stdout, reader)
 
